@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS Orders;
 
 DROP TABLE IF EXISTS Shops;
 
-DROP TABLE IF EXISTS Departments;
+DROP TABLE IF EXISTS Categories;
 
 -- MAKE TABLES
 CREATE TABLE Addresses (
@@ -36,4 +36,19 @@ CREATE TABLE Clients (
     address_id int NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (address_id) REFERENCES Addresses(id)
+);
+
+CREATE TABLE Categories (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Products (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    category_id int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (category_id) REFERENCES Categories(id)
 );

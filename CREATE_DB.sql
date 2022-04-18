@@ -1,4 +1,8 @@
+DROP DATABASE IF EXISTS nova_shop;
+
 CREATE DATABASE nova_shop;
+
+USE nova_shop;
 
 DROP TABLE IF EXISTS Clients;
 

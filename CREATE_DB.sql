@@ -8,9 +8,9 @@ DROP TABLE IF EXISTS Addresses;
 
 DROP TABLE IF EXISTS Clients;
 
-DROP TABLE IF EXISTS Suppliers;
-
 DROP TABLE IF EXISTS Products;
+
+DROP TABLE IF EXISTS Suppliers;
 
 DROP TABLE IF EXISTS Orders;
 
@@ -25,4 +25,15 @@ CREATE TABLE Addresses (
     city VARCHAR(255) NOT NULL,
     tk VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
+);
+
+CREATE TABLE Clients (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    surname VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    address_id int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (address_id) REFERENCES Addresses(id)
 );

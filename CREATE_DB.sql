@@ -77,6 +77,7 @@ CREATE TABLE Orders (
     shop_id int NOT NULL,
     cost DECIMAL(10, 2) NOT NULL,
     product_id int NOT NULL,
+    date DATE NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (client_id) REFERENCES Clients(id),
     FOREIGN KEY (product_id) REFERENCES Products(id),

@@ -1,3 +1,5 @@
+CREATE DATABASE nova_shop;
+
 DROP TABLE IF EXISTS Clients;
 
 DROP TABLE IF EXISTS Addresses;
